@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>따뜻한 소품샵</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Apple SD Gothic Neo', sans-serif;
+      background-color: #fff7e6;
+      color: #333;
+    }
+    header {
+      background-color: #ffe5d9;
+      padding: 20px;
+      text-align: center;
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #6d4c41;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      background-color: #ffdad0;
+      padding: 10px 0;
+    }
+    nav a {
+      text-decoration: none;
+      color: #6d4c41;
+      font-weight: 600;
+    }
+    main {
+      padding: 40px 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .product {
+      background-color: #fff;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+    .product img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 12px;
+      background-color: #f8f8f8;
+    }
+    .product h3 {
+      margin: 16px 0 10px;
+      color: #5d4037;
+    }
+    .product p {
+      font-size: 0.95rem;
+      color: #888;
+    }
+    footer {
+      background-color: #ffe5d9;
+      padding: 20px;
+      text-align: center;
+      color: #6d4c41;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>🌷 따뜻한 소품샵</header>
+  <nav>
+    <a href="new_with_candle.html">신상품</a>
+    <a href="best.html">베스트</a>
+    <a href="event_final_clean_centered.html">이벤트</a>
+  </nav>
+  <main>
+    <div class="product">
+      <img src="postcard.jpg" alt="감성 일러스트 엽서 이미지" />
+      <h3>감성 일러스트 엽서</h3>
+      <p>소중한 사람에게 마음을 전하는 따뜻한 엽서 한 장 💌</p>
+    </div>
+    <div class="product">
+      <img src="photo_2025-05-08_21-11-58.jpg" alt="다채로운 팔찌 세트" />
+      <h3>다채로운 팔찌 세트</h3>
+      <p>취향에 맞게 골라 착용하는 컬러풀 팔찌 💫</p>
+    </div>
+
+    
+    <div class="product">
+      <img src="diso-adiict-perfume_8.webp" alt="포근한 향수" />
+      <h3>포근한 향수</h3>
+      <p>일상 속 향기로 기억되는 따뜻한 순간 🌸</p>
+    </div>
+
+<section style="grid-column: 1 / -1; background-color: #fffaf2; padding: 30px; border-radius: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); margin-top: 40px;">
+      <h2 style="text-align: center; color: #6d4c41;">💬 어떤 상품을 더 좋아하시나요?</h2>
+      <form id="voteForm" style="max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px;">
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+          <label><input type="radio" name="favorite" value="엽서" /> 감성 일러스트 엽서</label>
+          <div style="background: #ffe5d9; width: 300px; height: 20px; border-radius: 10px; overflow: hidden;">
+            <div id="bar-엽서" style="height: 100%; background: #ffab91; width: 0%;"></div>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+          <label><input type="radio" name="favorite" value="팔찌" /> 행운 팔찌</label>
+          <div style="background: #ffe5d9; width: 300px; height: 20px; border-radius: 10px; overflow: hidden;">
+            <div id="bar-팔찌" style="height: 100%; background: #ffab91; width: 0%;"></div>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+          <label><input type="radio" name="favorite" value="스티커" /> 귀여운 스티커</label>
+          <div style="background: #ffe5d9; width: 300px; height: 20px; border-radius: 10px; overflow: hidden;">
+            <div id="bar-스티커" style="height: 100%; background: #ffab91; width: 0%;"></div>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+          <label><input type="radio" name="favorite" value="향수" /> 포근한 향수</label>
+          <div style="background: #ffe5d9; width: 300px; height: 20px; border-radius: 10px; overflow: hidden;">
+            <div id="bar-향수" style="height: 100%; background: #ffab91; width: 0%;"></div>
+          </div>
+        </div>
+        <button type="submit" style="margin-top: 16px; background-color: #ffccbc; color: #5d4037; padding: 10px 20px; border: none; border-radius: 10px; font-weight: bold; cursor: pointer;">투표하기</button>
+      </form>
+      <script>
+        const results = {
+          '엽서': 0,
+          '팔찌': 0,
+          '스티커': 0,
+          '향수': 0
+        };
+
+        document.getElementById('voteForm').addEventListener('submit', function (e) {
+          e.preventDefault();
+          const choice = document.querySelector('input[name="favorite"]:checked');
+          if (choice) {
+            results[choice.value]++;
+            const total = Object.values(results).reduce((a, b) => a + b, 0);
+            for (const key in results) {
+              const percent = (results[key] / total) * 100;
+              document.getElementById(`bar-${key}`).style.width = percent + '%';
+            }
+          }
+        });
+      </script>
+    </section>
+  </main>
+  <footer>
+    © 2025 따뜻한 소품샵 | All rights reserved.
+  </footer>
+</body>
+</html>
